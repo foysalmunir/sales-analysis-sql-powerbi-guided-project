@@ -1,3 +1,5 @@
+-- Create a CTE to combine product and sales data
+
 WITH CTE AS(
 SELECT
 a.Product,
@@ -23,4 +25,5 @@ SELECT *,
 (1-Discount*1.0/100)* revenue AS discount_revenue
 FROM CTE AS a
 INNER JOIN discount_data AS b
+
 ON a.Discount_Band = b.Discount_Band AND a.month = b.Month
